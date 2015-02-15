@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="EPriceProviderServices.CategoryItemView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Width="300" Height="Auto" HorizontalAlignment="Left" HorizontalContentAlignment="Left">
+    <Grid x:Name="CategoryViewContainer" Width="300" Height="Auto">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.1*"></ColumnDefinition>
+            <ColumnDefinition Width="0.9*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <CheckBox x:Name="CategoryItemIsLoad" Margin="1,2,0,2" IsThreeState="True" VerticalAlignment="Center" Click="CategoryItemIsLoad_Click"></CheckBox>
+        <TextBlock x:Name="CategoryItemName" Grid.Column="1" FontWeight="Bold" HorizontalAlignment="Left" Margin="1,2,1,2" Width="298" Height="Auto" TextWrapping="Wrap" Text=""  VerticalAlignment="Top" MouseRightButtonUp="CategoryItemName_MouseRightButtonUp"/>
+    </Grid>
+</UserControl>

@@ -1,0 +1,10 @@
+C:\Users\Tim452\Desktop\Work\UN1T\EPrice\EPriceProviderServices\EPriceRequestServiceDBEngine\bin\Release\EPriceRequestServiceDBEngine.dll
+C:\Users\Tim452\Desktop\Work\UN1T\EPrice\EPriceProviderServices\EPriceRequestServiceDBEngine\bin\Release\EPriceRequestServiceDBEngine.pdb
+C:\Users\Tim452\Desktop\Work\UN1T\EPrice\EPriceProviderServices\EPriceRequestServiceDBEngine\obj\Release\EPriceRequestServiceDBEngine.csprojResolveAssemblyReference.cache
+C:\Users\Tim452\Desktop\Work\UN1T\EPrice\EPriceProviderServices\EPriceRequestServiceDBEngine\obj\Release\EPriceRequestServiceDBEngine.dll
+C:\Users\Tim452\Desktop\Work\UN1T\EPrice\EPriceProviderServices\EPriceRequestServiceDBEngine\obj\Release\EPriceRequestServiceDBEngine.pdb
+C:\Users\Tim452\Desktop\Work\UN1T\EPrice\EPriceProviderServices\Eprice\EPriceRequestServiceDBEngine\bin\Release\EPriceRequestServiceDBEngine.dll
+C:\Users\Tim452\Desktop\Work\UN1T\EPrice\EPriceProviderServices\Eprice\EPriceRequestServiceDBEngine\bin\Release\EPriceRequestServiceDBEngine.pdb
+C:\Users\Tim452\Desktop\Work\UN1T\EPrice\EPriceProviderServices\Eprice\EPriceRequestServiceDBEngine\obj\Release\EPriceRequestServiceDBEngine.csprojResolveAssemblyReference.cache
+C:\Users\Tim452\Desktop\Work\UN1T\EPrice\EPriceProviderServices\Eprice\EPriceRequestServiceDBEngine\obj\Release\EPriceRequestServiceDBEngine.dll
+C:\Users\Tim452\Desktop\Work\UN1T\EPrice\EPriceProviderServices\Eprice\EPriceRequestServiceDBEngine\obj\Release\EPriceRequestServiceDBEngine.pdb

@@ -1,0 +1,5 @@
+C:\Users\Tim452\Desktop\Work\UN1T\EPrice\EPriceProviderServices\Eprice\EPriceRequestServiceDBEngine\bin\Debug\EPriceRequestServiceDBEngine.dll
+C:\Users\Tim452\Desktop\Work\UN1T\EPrice\EPriceProviderServices\Eprice\EPriceRequestServiceDBEngine\bin\Debug\EPriceRequestServiceDBEngine.pdb
+C:\Users\Tim452\Desktop\Work\UN1T\EPrice\EPriceProviderServices\Eprice\EPriceRequestServiceDBEngine\obj\Debug\EPriceRequestServiceDBEngine.csprojResolveAssemblyReference.cache
+C:\Users\Tim452\Desktop\Work\UN1T\EPrice\EPriceProviderServices\Eprice\EPriceRequestServiceDBEngine\obj\Debug\EPriceRequestServiceDBEngine.dll
+C:\Users\Tim452\Desktop\Work\UN1T\EPrice\EPriceProviderServices\Eprice\EPriceRequestServiceDBEngine\obj\Debug\EPriceRequestServiceDBEngine.pdb

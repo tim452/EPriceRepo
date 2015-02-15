@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="EPriceViewer.ProductView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Height="Auto" Width="Auto">
+    <Border BorderBrush="Black" BorderThickness="1" Margin="5,1,5,1">
+        <Expander>
+            <Expander.Header>
+                <StackPanel Orientation="Vertical" Cursor="Hand">
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                            <TextBlock x:Name="txtPartNumber" FontWeight="Medium" Foreground="Chocolate" TextWrapping="WrapWithOverflow" VerticalAlignment="Center" Margin="2,0,2,0" Width="120" MouseLeftButtonUp="txtPartNumber_MouseLeftButtonUp"></TextBlock>                           
+                            <TextBlock x:Name="txtProvider" VerticalAlignment="Center" Margin="2,2,2,2"></TextBlock>
+                            <TextBlock x:Name="txtDate" VerticalAlignment="Center" Margin="2,2,2,2"></TextBlock>
+                        </StackPanel>
+                        <TextBlock x:Name="txtName" FontWeight="Medium" Width="Auto" TextWrapping="Wrap" Height="Auto" VerticalAlignment="Center" Margin="2,3,2,3"></TextBlock>
+                        <TextBlock x:Name="txtMinPriceUsd" Width="80" TextWrapping="Wrap" Height="Auto" VerticalAlignment="Center" Margin="2,0,2,0"></TextBlock>
+                        <TextBlock x:Name="txtMinStockUsdValue" Width="50" TextWrapping="Wrap" Height="Auto" VerticalAlignment="Center" Margin="2,0,2,0"></TextBlock>
+                        <TextBlock x:Name="txtMinPriceRub" Width="80" TextWrapping="Wrap" Height="Auto" VerticalAlignment="Center" Margin="2,0,2,0"></TextBlock>
+                        <TextBlock x:Name="txtMinStockRubValue" Width="50" TextWrapping="Wrap" Height="Auto" VerticalAlignment="Center" Margin="2,0,2,0"></TextBlock>
+                    </StackPanel>
+                </StackPanel>
+            </Expander.Header>
+            <StackPanel Orientation="Vertical">
+                <StackPanel x:Name="Stocks" Orientation="Vertical" HorizontalAlignment="Left">
+                </StackPanel>
+                <TextBlock x:Name="txtProperties" TextWrapping="Wrap" HorizontalAlignment="Stretch" FontWeight="Medium" Text="Характеристики" Margin="3" Cursor="Hand" MouseLeftButtonUp="Properties_MouseLeftButtonUp" ></TextBlock>
+            </StackPanel>
+        </Expander>
+        
+    </Border>
+</UserControl>

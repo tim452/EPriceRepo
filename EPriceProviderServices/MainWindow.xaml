@@ -1,0 +1,140 @@
+﻿<Window x:Class="EPriceProviderServices.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Icon="mainapp.ico"
+        Title="Provider Services управление" Height="620" Width="1000" MinHeight="620" MinWidth="1000" Closing="Window_Closing" Loaded="Window_Loaded">
+    <Window.Resources>
+        <ContextMenu x:Key="TrayMenu">
+            <MenuItem Header="Выйти" Click="MenuExitClick" />
+        </ContextMenu>
+    </Window.Resources>
+    <Grid Margin="0,0,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Margin="2,2,0,2">
+            <TextBlock Text="Статус:" FontWeight="Bold" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top"/>
+            <TextBlock x:Name="txtStatus" HorizontalAlignment="Left" Margin="2,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        </StackPanel>
+        <TabControl Grid.Row="1" >
+            <TabItem Header="Каталог">
+                <Grid Background="#FFE5E5E5" Margin="0,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.44*"></ColumnDefinition>
+                        <ColumnDefinition Width="0.02*"></ColumnDefinition>
+                        <ColumnDefinition Width="0.44*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Label Content="Каталог UN1T" FontWeight="Bold" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="Auto"/>
+                        <StackPanel Grid.Row="1" Margin="5,3,0,3" Orientation="Horizontal">
+                            <Button x:Name="btnNewUn1tCategory" Margin="5,0,5,0" Click="btnNewUn1tCategory_Click">Создать</Button>
+                            <Button x:Name="btnEditUn1tCategory" Margin="5,0,5,0" Height="22" VerticalAlignment="Bottom" Click="btnEditUn1tCategory_Click">Изменить</Button>
+                            <Button x:Name="btnDeleteUn1tCategory" Margin="5,0,5,0" Click="btnDeleteUn1tCategory_Click">Удалить</Button>
+                            <ToggleButton x:Name="btnToggleCategoryView" Margin="5,0,5,0" Click="btnToggleCategoryView_Click">Показать привязки</ToggleButton>
+                        </StackPanel>
+                        <TreeView Grid.Row="2" x:Name="Un1tCategoriesView" MouseRightButtonUp="TreeView_MouseRightButtonUp" SelectedItemChanged="Un1tCategoriesView_SelectedItemChanged" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></TreeView>
+                    </Grid>
+                    <Grid Grid.Column="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Label Content="Каталоги поставщиков" FontWeight="Bold" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="Auto"/>
+                        <TabControl x:Name="ProviderCategoryTabControl" Grid.Row="1" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch" Width="Auto" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" SelectionChanged="ProviderCategoryTabControl_SelectionChanged" >
+                            <TabItem Header="Merlion" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" >
+                                <TreeView x:Name="MerlionCategoriesView" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>        
+                            </TabItem>
+                            <TabItem Header="Treolan" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                <TreeView x:Name="TreolanCategoriesView" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                            </TabItem>
+                            <TabItem Header="OCS" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                <TreeView x:Name="OcsCategoriesView" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                            </TabItem>
+                            <TabItem Header="OLDI" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                <TreeView x:Name="OldiCategoriesView" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                            </TabItem>
+                        </TabControl>
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Управление">
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel x:Name="LoadProductsManagePanel" Orientation="Vertical" Width="Auto" Margin="10,5,10,5" VerticalAlignment="Top">
+                        <Border x:Name="AutoManagePanel" BorderBrush="Black" BorderThickness="1" Margin="10,5,10,5">
+                            <StackPanel Orientation="Vertical" Width="300" VerticalAlignment="Top">
+                                <Label FontWeight="Medium">Загрузка по расписанию</Label>
+                                <CheckBox x:Name="IsLoadPropertiesAuto" Margin="10,5,10,5" Content="Загружать характеристики" IsThreeState="False" IsChecked="True"/>
+                                <StackPanel Orientation="Horizontal" Margin="10,0,10,5">
+                                    <Label>Период обновления</Label>
+                                    <ComboBox x:Name="AutoUpdatePeriod" Height="20" Width="90" Margin="5,0,0,0">
+                                        <ComboBox.Items>
+                                            <ComboBoxItem Content="1 час" Tag="60"></ComboBoxItem>
+                                            <ComboBoxItem Content="2 часа" Tag="120"></ComboBoxItem>
+                                            <ComboBoxItem Content="3 часа" Tag="180" IsSelected="True"></ComboBoxItem>
+                                            <ComboBoxItem Content="6 часов" Tag="360"></ComboBoxItem>
+                                            <ComboBoxItem Content="9 часов" Tag="540"></ComboBoxItem>
+                                            <ComboBoxItem Content="12 часов" Tag="720"></ComboBoxItem>
+                                            <ComboBoxItem Content="18 часов" Tag="1080"></ComboBoxItem>
+                                            <ComboBoxItem Content="24 часа" Tag="1440"></ComboBoxItem>
+                                        </ComboBox.Items>
+                                    </ComboBox>
+                                </StackPanel>
+                                <Button x:Name="btnStartAutoLoader" HorizontalAlignment="Center" Margin="2,0,0,6" Height="34" Width="70" Click="btnStartAutoLoader_Click" >
+                                    <StackPanel Orientation="Horizontal" Height="Auto">
+                                        <Label FontWeight="Bold" VerticalAlignment="Center">Старт</Label>
+                                        <Polyline Points="0,2 12,10 0,18 0,2" Fill="Green" Stroke="Black" Margin="5,0,5,0" VerticalAlignment="Center"></Polyline>
+                                    </StackPanel>
+                                </Button>
+                                <Button x:Name="btnStopAutoLoader" HorizontalAlignment="Center" Margin="2,0,0,6" Height="34" Width="70" Visibility="Collapsed" Click="btnStopAutoLoader_Click" >
+                                    <StackPanel Orientation="Horizontal" Height="Auto">
+                                        <Label FontWeight="Bold" VerticalAlignment="Center">Стоп</Label>
+                                        <Ellipse Width="16" Height="16" Fill="Red" Stroke="Black"  VerticalAlignment="Center" Margin="5,0,5,0"></Ellipse>
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                        </Border>
+                        <Border x:Name="ManualManagePanel" BorderBrush="Black" BorderThickness="1" Margin="10,5,10,5">
+                            <StackPanel Orientation="Vertical" Width="300" VerticalAlignment="Top">
+                                <Label FontWeight="Medium">Вручную</Label>
+                                <CheckBox x:Name="IsLoadProperties" Margin="10,5,10,5" Content="Загружать характеристики" IsThreeState="False" IsChecked="True"/>
+                                <Button x:Name="btnGetAllProviderProductsAndPricies" Margin="10,5,10,5" Click="btnGetAllProviderProductsAndPricies_Click" Content="Получить данные всех поставщиков"/>
+                                <Button x:Name="btnGetAllProviderCatalogs" Margin="10,5,10,5" Click="btnGetAllProviderCatalogs_Click" Content="Перезагрузить каталоги всех поставщиков"/>
+                            </StackPanel>
+                        </Border>
+                        <Border BorderBrush="Black" BorderThickness="1" Margin="10,5,10,5">
+                            <StackPanel Orientation="Vertical" Width="300" VerticalAlignment="Top" Margin="5">
+                                <Label FontWeight="Medium">Последняя загрузка товаров</Label>
+                                <TextBlock x:Name="txtMerlionProductsCount" Text="Merlion: 0"></TextBlock>
+                                <TextBlock x:Name="txtTreolanProductsCount" Text="Treolan: 0"></TextBlock>
+                                <TextBlock x:Name="txtOcsProductsCount" Text="OCS: 0"></TextBlock>
+                                <TextBlock x:Name="txtOldiProductsCount" Text="OLDI: 0"></TextBlock>
+                                <TextBlock x:Name="txtTotalProductsCount" Text="Всего: 0"></TextBlock>
+                            </StackPanel>
+                        </Border>
+                        <Border x:Name="PropertyPanel" BorderBrush="Black" BorderThickness="1" Margin="10,5,10,5" Visibility="Collapsed">
+                            <StackPanel Orientation="Vertical" Width="300" VerticalAlignment="Top">
+                                <Label FontWeight="Medium">Загрузка характеристик</Label>
+                                <Label x:Name="PropertiesLoadCount">Осталось обработать: </Label>
+                                <Label x:Name="PropertiesLoadedCount">Получено характеристик:</Label>
+                                <ProgressBar x:Name="PropertyLoadProgress" Minimum="0" Margin="10,5,10,5" Height="20" />
+                            </StackPanel>
+                        </Border>
+                        <Border x:Name="StoragePanel" BorderBrush="Black" BorderThickness="1" Margin="10,5,10,5" Visibility="Collapsed">
+                            <StackPanel Orientation="Vertical" Width="300" VerticalAlignment="Top">
+                                <Label FontWeight="Medium">Сохранение данных</Label>
+                                <Label x:Name="DataSaveCount">Осталось:</Label>
+                                <ProgressBar x:Name="DataSaveProgress" Minimum="0" Margin="10,5,10,5" Height="20" />
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                    <ListView x:Name="lstProductsLog" Margin="10,10,10,5" Width="600" Height="Auto" VerticalAlignment="Stretch" VerticalContentAlignment="Stretch"></ListView>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

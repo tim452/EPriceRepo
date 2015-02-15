@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="EPriceProviderServices.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="EPriceProviderServices_TreolanProductService_B2BWebService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://api.treolan.ru/webservice2008/Service.asmx</Value>
+    </Setting>
+    <Setting Name="EPriceProviderServices_OldiDataService_B2bPublic" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://83.136.30.148/Public/wserp.1cws</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
